@@ -85,7 +85,7 @@ To clean up `node_modules` directories and build artifacts (`dist` and `build` d
 The monorepo is structured as follows:
 
 ```
-my-monorepo/
+easy-generator-full-stack-task/
 ├── server/           # NestJS backend application
 │   ├── dist/         # Compiled server files (generated)
 │   ├── node_modules/ # Server dependencies (generated)
