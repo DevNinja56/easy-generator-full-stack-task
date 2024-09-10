@@ -114,3 +114,72 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## Contact
 
 If you have any questions or need further assistance, feel free to reach out to the repository maintainer.
+
+
+
+# Docker Setup
+
+This project uses Docker and Docker Compose to manage both the client and server applications within a monorepo structure.
+
+## Prerequisites
+
+Make sure you have the following installed:
+- **Docker**: [Install Docker](https://docs.docker.com/get-docker/)
+- **Docker Compose**: [Install Docker Compose](https://docs.docker.com/compose/install/)
+
+## Folder Structure
+
+The project consists of two main services:
+- `client` (React Application)
+- `server` (NestJS Application)
+
+The Docker configuration is defined for both services, allowing them to run in isolated containers.
+
+## Docker Compose Setup
+
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/DevNinja56/easy-generator-full-stack-task.git
+   cd easy-generator-full-stack-task
+   ```
+
+2. **Build and run the containers**:
+   Use Docker Compose to build and start both the server and client services.
+
+   ```bash
+   docker-compose build
+   docker-compose up
+   ```
+
+   This will:
+   - Build the server (`server/Dockerfile`) and expose it on port `3001`.
+   - Build the client (`client/Dockerfile`) and expose it on port `3000`.
+
+3. **Access the applications**:
+   - React Client: [http://localhost:3000](http://localhost:3000)
+   - NestJS Server: [http://localhost:3001](http://localhost:3001)
+
+## Additional Docker Commands
+
+- **Stop the containers**:
+  ```bash
+  docker-compose down
+  ```
+
+- **Rebuild the containers (useful when dependencies change)**:
+  ```bash
+  docker-compose build
+  ```
+
+- **View running containers**:
+  ```bash
+  docker ps
+  ```
+
+- **Tail container logs**:
+  ```bash
+  docker-compose logs -f
+  ```
+
+This setup simplifies the process of running the project in a development or production environment using Docker.
+
