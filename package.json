@@ -1,0 +1,21 @@
+{
+    "name": "eg-test-task",
+    "private": true,
+    "version": "1.0.0",
+    "workspaces": [
+        "server",
+        "client"
+    ],
+    "scripts": {
+        "start:server": "npm run start --workspace=server",
+        "start:client": "npm run start --workspace=client",
+        "start": "concurrently \"npm run start:server\" \"npm run start:client\"",
+        "clean:server": "rimraf server/node_modules server/dist",
+        "clean:client": "rimraf client/node_modules client/build",
+        "clean:root": "rimraf node_modules",
+        "clean": "npm run clean:server && npm run clean:client && npm run clean:root"
+    },
+    "dependencies": {
+        "concurrently": "^8.2.0"
+    }
+}

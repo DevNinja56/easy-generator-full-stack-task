@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import "./config";
+
+body {
+  @apply bg-grayBg;
+  font-family: $primary-font;
+}
